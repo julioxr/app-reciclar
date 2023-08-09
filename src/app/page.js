@@ -10,24 +10,31 @@ export default function Home() {
 
     const takePicture = () => {
         setShowWebcam(true);
-
-        // console.log(webcamRef.current.getScreenshot());
     };
 
     const savePicture = () => {
         setShowWebcam(false);
         setImage(webcamRef.current.getScreenshot());
-        alert("Foto guardada");
     };
 
     const showImage = () => {
         setMostrar(true);
     };
 
+    const videoConstraints = {
+        width: 1280,
+        height: 720,
+        facingMode: "user",
+    };
+
     return (
         <div>
             <h1>App</h1>
-            {showWebcam ? <Webcam ref={webcamRef} /> : ""}
+            {showWebcam ? (
+                <Webcam ref={webcamRef} videoConstraints={videoConstraints} />
+            ) : (
+                ""
+            )}
 
             {!showWebcam && (
                 <button
