@@ -22,7 +22,7 @@ export default function Home() {
     };
 
     const videoConstraints = {
-        facingMode: { exact: "environment" },
+        facingMode: { exact: "environment", width: 1280, height: 720 },
     };
 
     return (
@@ -53,6 +53,7 @@ export default function Home() {
             <div>
                 {mostrar && (
                     <div>
+                        <p>nuevo</p>
                         <p>Foto tomada</p>
                         <img src={image} alt="" />
                     </div>
