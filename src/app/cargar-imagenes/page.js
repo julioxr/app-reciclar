@@ -1,7 +1,18 @@
-import React from "react";
+"use client";
+import { useEffect } from "react";
+import { useAuth } from "@/context/AuthContext";
+import Navbar from "@/components/Navbar";
+import ImageLoader from "@/components/ImageLoader";
 
-const page = () => {
-    return <div>Cargar imagenes</div>;
+const LoadingImages = () => {
+    const { username } = useAuth();
+
+    return (
+        <>
+            <Navbar username={username} />
+            <ImageLoader />
+        </>
+    );
 };
 
-export default page;
+export default LoadingImages;

@@ -35,6 +35,6 @@ export async function POST(request) {
             { status: 401 }
         );
     } else {
-        return NextResponse.json({ message: "Bienvenido" }, { status: 200 });
+        return NextResponse.json(validatedUser, { status: 200 });
     }
 }

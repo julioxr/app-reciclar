@@ -13,8 +13,10 @@ const HandleLogin = async (username, password) => {
 
     const res = {
         status: response.status,
-        message: data.message,
+        user: data,
     };
+
+    // console.log(res);
 
     return res;
 };

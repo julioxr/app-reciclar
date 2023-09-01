@@ -1,10 +1,11 @@
-"use client";
-import Login from "@/components/Login";
+import React from "react";
 
-export default function Home() {
+const ImageLoader = () => {
     return (
         <main className="bg-gray-200 min-h-screen flex flex-col justify-center items-center">
-            <Login />
+            <p>Cargar imagenes</p>
         </main>
     );
-}
+};
+
+export default ImageLoader;

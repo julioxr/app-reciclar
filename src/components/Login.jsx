@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/context/AuthContext";
 import HandleLogin from "@/utils/handleLogin";
+import ErrorMessage from "./ErrorMessage";
 
 const Login = () => {
     const [emptyInput, setEmptyInput] = useState(false);
@@ -13,6 +14,7 @@ const Login = () => {
         setPassword,
         isLoggedIn,
         setIsLoggedIn,
+        setUser,
     } = useAuth();
 
     const router = useRouter();
@@ -24,10 +26,11 @@ const Login = () => {
                 console.log("Falta llenar campos");
                 setEmptyInput(true);
             } else {
-                const statusLogin = await HandleLogin(username, password);
-                if (statusLogin.status == 200) {
+                const user = await HandleLogin(username, password);
+                if (user.status == 200) {
                     setErrorLogin(false);
                     setIsLoggedIn(true);
+                    localStorage.setItem("usuario", JSON.stringify(user.user));
                     router.push("/cargar-imagenes");
                 } else {
                     setErrorLogin(true);
@@ -80,14 +83,10 @@ const Login = () => {
                     Ingesar
                 </button>
                 {emptyInput && (
-                    <p className="text-red-500 text-sm">
-                        *Completar los datos vacios
-                    </p>
+                    <ErrorMessage message="*Completar los datos vacios" />
                 )}
                 {errorLogin && (
-                    <p className="text-red-500 text-sm">
-                        *Usuario o contraseña incorrectos
-                    </p>
+                    <ErrorMessage message="*Usuario o contraseña incorrectos" />
                 )}
             </form>
         </section>
