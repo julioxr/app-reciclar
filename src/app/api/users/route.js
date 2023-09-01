@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 const users = [
     {
         username: "julio",
-        password: "1234",
+        password: "Foxi2023!",
         admin: true,
         schools: [
             {

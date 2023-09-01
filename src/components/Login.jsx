@@ -14,7 +14,6 @@ const Login = () => {
         setPassword,
         isLoggedIn,
         setIsLoggedIn,
-        setUser,
     } = useAuth();
 
     const router = useRouter();
