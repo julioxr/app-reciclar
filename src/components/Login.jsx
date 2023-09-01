@@ -43,7 +43,7 @@ const Login = () => {
     };
 
     return (
-        <section className="bg-gray-100 p-12 rounded flex flex-col">
+        <section className="bg-gray-100 p-12 rounded flex flex-col shadow-xl shadow-blue-700/10 text-gray-800">
             <h1 className="mb-4 text-4xl font-semibold self-center">
                 Reciclar
             </h1>
@@ -56,7 +56,7 @@ const Login = () => {
                     <input
                         type="text"
                         name="name"
-                        className="h-8"
+                        className="h-8 pl-2"
                         onChange={(e) => {
                             setUsername(e.target.value);
                         }}
@@ -68,7 +68,7 @@ const Login = () => {
                     <input
                         type="password"
                         name="password"
-                        className="h-8"
+                        className="h-8 pl-2"
                         onChange={(e) => {
                             setPassword(e.target.value);
                         }}

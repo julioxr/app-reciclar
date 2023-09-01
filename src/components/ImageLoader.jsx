@@ -76,7 +76,9 @@ const ImageLoader = ({ username }) => {
                     className="hidden"
                 />
                 <MdCloudUpload className="text-blue-400 w-16 h-16" />
-                <p>Cargar archivos (maximo 2 imagenes)</p>
+                <p className="text-gray-800">
+                    Cargar archivos (maximo 2 imagenes)
+                </p>
                 {/* <button
                     type="submit"
                     className="w-32 h-8 bg-gray-100 text-black"
